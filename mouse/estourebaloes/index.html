@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Balão de Festa Infantil</title>
+  <style>
+    body {
+      background: #cceeff;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .balloon-container {
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .string {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 60px;
+      background: #666;
+      z-index: 0;
+    }
+
+    .balloon {
+      position: relative;
+      width: 100px;
+      height: 130px;
+      background: radial-gradient(circle at 30% 30%, #ff4d6d, #cc0033);
+      border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+      box-shadow: inset -5px -10px 15px rgba(255, 255, 255, 0.3);
+      z-index: 10;
+    }
+
+    .knot {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 10px;
+      background: #cc0033;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(-20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="balloon-container">
+    <div class="string"></div>
+    <div class="balloon">
+      <div class="knot"></div>
+    </div>
+  </div>
+</body>
+</html>
