@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IFGames::Estourando Balões</title>
+  <link rel="stylesheet" href="assets/baloes.css">
+  <link rel="shortcut icon" href="assets/images/baloes.png" type="image/png">
+</head>
+
+<body>
+  <div class="ceu">
+    <div class="painel">
+      <div class="acertos">
+        <img src="assets/images/check-solid.png" alt="acertos">
+        <span>0</span>
+      </div>
+      <div class="erros">
+        <img src="assets/images/times-solid.png" alt="errors">
+        <span>0</span>
+      </div>
+      <div class="clock">
+        <img src="assets/images/clock-solid.png" alt="clock">
+        <span>5:00</span>
+      </div>
+    </div>
+    <div class="timer"></div>
+  </div>
+
+  <audio id="som" src="assets/sounds/pop.mp3" preload="auto"></audio>
+  <script src="assets/game.js"></script>
+</body>
+
+</html>

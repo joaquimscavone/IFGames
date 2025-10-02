@@ -1,0 +1,284 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.ceu{
+    background: #cceeff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 50px solid;
+}
+.timer{
+    font-size: 200px;
+    user-select: none;
+}
+.painel{
+    position: fixed;
+    right: 50px;
+    top:50px;
+    width: 140px;
+    padding: 20px;
+}
+.painel > div{
+    display: flex;
+    height: 50px;
+    padding:10px;
+    line-height: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.painel .acertos{
+    border:5px solid green;
+    background-color: greenyellow;
+}
+ .painel .erros{
+    border:5px solid red;
+    background-color: plum;
+}
+ .painel .clock{
+    border:5px solid black;
+    background-color: gray;
+}
+
+.painel img{
+    margin-right: 20px;
+}
+
+.balloon-container {
+    position: fixed;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+.string {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 60px;
+    background: #666;
+    z-index: 0;
+}
+
+.balloon {
+    position: relative;
+    width: 100px;
+    height: 130px;
+    border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+    box-shadow: inset -5px -10px 15px rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    transition: transform 0.2s;
+}
+
+.knot {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    z-index: 1;
+    transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.fall {
+    animation: fallDown 0.8s ease-in-out forwards;
+}
+
+.pop{
+    animation: none !important;
+}
+.pop .string, .pop .knot {
+    animation: cair 1s ease-in-out forwards;
+}
+.pop .balloon {
+    animation: pop 0.4s forwards;
+}
+
+
+@keyframes float {
+    
+    0%,
+    100% {
+        transform: translateX(0px);
+    }
+    
+    50% {
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes cair {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate(-50%, 200px);
+        opacity: 0;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: explode 0.6s forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate(var(--x), var(--y));
+        opacity: 0;
+    }
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate(-50%, 200px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+
+.balloon-container.pink .balloon{
+    background: radial-gradient(circle at 30% 30%, #ff99cc, #ff66b2);
+}
+.balloon-container.pink .knot, .balloon-container.pink .particle{
+    background: #ff66b2;
+}
+.border-pink{
+    border-color: #ff66b2;
+}
+.balloon-container.red .balloon {
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, #b30000);
+}
+.balloon-container.red .knot, .balloon-container.red .particle{
+    background: #b30000;
+}
+.border-red{
+    border-color: #b30000;
+}
+.balloon-container.orange .balloon {
+    background: radial-gradient(circle at 30% 30%, #ffc04d, #cc8400);
+}
+.balloon-container.orange .knot, .balloon-container.orange .particle{
+    background: #cc8400;
+}
+.border-orange{
+    border-color: #cc8400;
+}
+.balloon-container.yellow .balloon {
+    background: radial-gradient(circle at 30% 30%, #ffff66, #cccc00);
+}
+.balloon-container.yellow .knot, .balloon-container.yellow .particle{
+    background: #cccc00;
+}
+.border-yellow{
+    border-color: #cccc00;
+}
+.balloon-container.green .balloon {
+    background: radial-gradient(circle at 30% 30%, #66ff66, #009933);
+}
+.balloon-container.green .knot, .balloon-container.green .particle{
+    background: #009933;
+}
+.border-green{
+    border-color: #009933;
+}
+.balloon-container.turquoise .balloon {
+    background: radial-gradient(circle at 30% 30%, #66ffff, #009999);
+}
+.balloon-container.turquoise .knot, .balloon-container.turquoise .particle{
+    background: #009999;
+}
+.border-turquoise{
+    border-color: #009999;
+}
+.balloon-container.blue .balloon {
+    background: radial-gradient(circle at 30% 30%, #4da6ff, #0055cc);
+}
+.balloon-container.blue .knot, .balloon-container.blue .particle{
+    background: #0055cc;
+}
+.border-blue{
+    border-color: #0055cc;
+}
+.balloon-container.indigo .balloon {
+    background: radial-gradient(circle at 30% 30%, #8c66ff, #4b0082);
+}
+.balloon-container.indigo .knot, .balloon-container.indigo .particle{
+    background: #4b0082;
+}
+.border-indigo{
+    border-color: #4b0082;
+}
+.balloon-container.purple .balloon {
+    background: radial-gradient(circle at 30% 30%, #cc66ff, #9900cc);
+}
+.balloon-container.purple .knot, .balloon-container.purple .particle{
+    background: #9900cc;
+}
+.border-purple{
+    border-color: #9900cc;
+}
+.balloon-container.gray .balloon {
+    background: radial-gradient(circle at 30% 30%, #dddddd, #999999);
+}
+.balloon-container.gray .knot, .balloon-container.gray .particle{
+    background: #999999;
+}
+.border-gray{
+    border-color: #999999;
+}
+.balloon-container.black .balloon {
+    background: radial-gradient(circle at 30% 30%, #555555, #000000);
+}
+.balloon-container.black .knot, .balloon-container.black .particle{
+    background: #000000;
+}
+.border-black{
+    border-color: #000000;
+}
